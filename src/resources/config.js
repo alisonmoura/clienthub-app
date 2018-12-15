@@ -1,4 +1,4 @@
 export default {
-    apiLink: "https://clienthub-api.herokuapp.com"
-    // apiLink: "http://localhost:3000"
+    // apiLink: "https://clienthub-api.herokuapp.com"
+    apiLink: "http://localhost:3000"
 }

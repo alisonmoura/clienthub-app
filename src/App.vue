@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar dark app color="primary">
+    <v-toolbar dark app color="primary" v-if="localStorage.getItem('loggedUser')">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="headline">
         <span>{{$route.name}}</span>
@@ -59,6 +59,7 @@
     name: 'App',
     data() {
       return {
+        localStorage : localStorage,
         drawer: null,
         items: [{
             title: 'Home',
