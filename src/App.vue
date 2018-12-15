@@ -35,15 +35,17 @@
       <v-list class="pt-0" dense>
         <v-divider light></v-divider>
 
-        <v-list-tile v-for="item in items" :key="item.title">
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
+        <router-link v-for="item in items" :key="item.title" :to="item.to" tag="div">
+          <v-list-tile>
+            <v-list-tile-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
 
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </router-link>
       </v-list>
     </v-navigation-drawer>
     <v-content>
@@ -58,9 +60,16 @@
     data() {
       return {
         drawer: null,
-        items: [
-          { title: 'Home', icon: 'dashboard' },
-          { title: 'About', icon: 'question_answer' }
+        items: [{
+            title: 'Home',
+            icon: 'dashboard',
+            to: '/home'
+          },
+          {
+            title: 'Clientes',
+            icon: 'person',
+            to: '/clientes'
+          }
         ],
         mini: false,
         right: null
