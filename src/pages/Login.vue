@@ -29,7 +29,7 @@
             async login() {
                 this.loading = true;
                 try {
-                    let response = await Axios.post(config.apiLink + '/auth', this.user)
+                    let response = await Axios.post(`${config.apiLink}/auth`, this.user)
                     console.log(response)
                     alert(response.data)
                 } catch (response) {
