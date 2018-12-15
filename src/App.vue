@@ -3,7 +3,7 @@
     <v-toolbar dark app color="primary">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="headline">
-        <span>ClientHub</span>
+        <span>{{$route.name}}</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>

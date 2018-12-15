@@ -1,8 +1,5 @@
 <template>
     <v-layout row wrap justify-center>
-        <v-flex xs12 class="text-xs-center mt-5">
-            <h1 class="headline">Login</h1>
-        </v-flex>
         <v-flex xs10>
             <v-card class="pa-3 mt-5">
                 <v-text-field v-model="user.email" label="Email"></v-text-field>
@@ -31,7 +28,7 @@
                 try {
                     let response = await Axios.post(`${config.apiLink}/auth`, this.user)
                     console.log(response)
-                    alert(response.data)
+                    this.$router.push('/home')
                 } catch (response) {
                     console.log(response)
                     alert(response.data)
